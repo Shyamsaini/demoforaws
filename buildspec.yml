@@ -10,9 +10,4 @@ phases:
   build:
     commands:
       - npm run build
-      - ls -la dist   # DEBUG (important)
       - aws s3 sync dist/ s3://shyam-v1-destination --delete
-
-artifacts:
-  files:
-    - '**/*'
