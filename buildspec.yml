@@ -1,13 +1,10 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo Installing dependencies
   build:
     commands:
-      - echo Build started
-      - echo No build required for static site
+      - echo "Deploying to S3 from CodeBuild"
+      - aws s3 sync . s3://shyam-v1-destination --delete
 
 artifacts:
   files:
