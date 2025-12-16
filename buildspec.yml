@@ -4,7 +4,7 @@ phases:
   build:
     commands:
       - echo "Deploying to S3 from CodeBuild"
-      - aws s3 sync . s3://shyam-v1-destination --delete
+      - aws s3 sync dist/ s3://shyam-v1-destination --delete
 
 artifacts:
   files:
